@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body ng-app='MyCalculator'>
+      <input type="text" ng-model="numbera"/>
+      <select ng-model="operation">
+        <option value="sum">Sum</option>
+        <option value="multiply">Multiply</option>
+      </select>
+      <input type="text" ng-model="numberb"/>
+
+      {{numbera}}
+      {{result}}
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/controller/ComputeController.js"></script>
+  </body>
+</html>
