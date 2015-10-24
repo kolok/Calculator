@@ -2,3 +2,7 @@ I use a lot the youtube formation to Angular : https://www.youtube.com/playlist?
 Thanks a lot to Grafikart.fr for this very usefull toturial
 
 Please be kind with me it is my first WebApp using AngularJS
+
+Todo :
+* Manage the error in the html and not in the controller, furthermore, the check about number as int is not checked
+
