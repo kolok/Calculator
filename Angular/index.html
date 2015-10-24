@@ -1,19 +1,32 @@
 <html>
   <head>
     <title>Calculator</title>
+    <style>
+      body {font-style: italic}  
+    </style>
   </head>
   <body ng-app='MyCalculator'>
-    <form ng-submit="">
-      <input type="text" ng-model="newCompute.numbera"/>
-      <select ng-model="newCompute.operation">
-        <option value="sum">Sum</option>
-        <option value="multiply">Multiply</option>
-      </select>
-      <input type="text" ng-model="newCompute.numberb"/>
-      <input type="submit" value="go"/>
-      <p id="result"></p>
+    <div ng-controller='ComputeController'>
+      <form name="myCompute" ng-submit="computeProcess()" novalidate>
+        <input name="numbera" ng-model="newCompute.numbera" placeholder="Fill the number A"/>
+        <select ng-model="newCompute.operation" placeholder="Operation" required>
+          <option value="sum">Sum</option>
+          <option value="multiply">Multiply</option>
+          <option value="divide">Divide</option>
+          <option value="substract">Substract</option>
+        </select>
+        <input type="text" ng-model="newCompute.numberb" placeholder="Fill the number B"/>
+        <input type="submit" value="go"/>
+      </form>
+      <p>{{lastResult}}</p>
+
+      <div ng-repeat="compute in computes">
+        <p>{{compute.numbera}} {{compute.op}} {{compute.numberb}} = {{compute.result}}</p>
+      </div>
+
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
       <script src="js/app.js"></script>
       <script src="js/controller/ComputeController.js"></script>
+    </div>
   </body>
 </html>
