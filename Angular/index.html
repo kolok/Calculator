@@ -1,21 +1,22 @@
 <html>
   <head>
     <title>Calculator</title>
-    <style>
-      body {font-style: italic}  
+    <style type="text/css">
+      body {font-style: italic}
     </style>
   </head>
   <body ng-app='MyCalculator'>
     <div ng-controller='ComputeController'>
       <form name="myCompute" ng-submit="computeProcess()" novalidate>
-        <input name="numbera" ng-model="newCompute.numbera" placeholder="Fill the number A"/>
-        <select ng-model="newCompute.operation" placeholder="Operation" required>
+        <input type="number" name="numbera" ng-model="newCompute.numbera" placeholder="Fill the number A" required="" />
+        <select name="operation" id="operation" ng-model="newCompute.operation">
+          <option value="">---Please select an operation---</option>
           <option value="sum">Sum</option>
+          <option value="substract">Substract</option>
           <option value="multiply">Multiply</option>
           <option value="divide">Divide</option>
-          <option value="substract">Substract</option>
         </select>
-        <input type="text" ng-model="newCompute.numberb" placeholder="Fill the number B"/>
+        <input type="number" ng-model="newCompute.numberb" placeholder="Fill the number B"/>
         <input type="submit" value="go"/>
       </form>
       <p>{{lastResult}}</p>
