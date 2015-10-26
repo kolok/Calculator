@@ -1,12 +1,10 @@
 <html>
   <head>
     <title>Calculator</title>
-    <style type="text/css">
-      body {font-style: italic}
-    </style>
+    <link rel="stylesheet" href="css/calculator.css">
   </head>
   <body ng-app='MyCalculator'>
-    <div ng-controller='ComputeController'>
+    <div class="main-calculator" ng-controller='ComputeController'>
       <form name="myCompute" ng-submit="computeProcess()" novalidate>
         <input type="number" name="numbera" ng-model="newCompute.numbera" placeholder="Fill the number A" required="" />
         <select name="operation" id="operation" ng-model="newCompute.operation">
