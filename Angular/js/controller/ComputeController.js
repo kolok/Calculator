@@ -1,10 +1,17 @@
 app.controller('ComputeController', function($scope){
   $scope.result = false;
   $scope.newCompute = {};
+  $scope.newExpression = {};
   $scope.lastResult = "Please fill the fields";
   $scope.computes = [];
+  $scope.expressions = [];
+  $scope.computeExpression = function(){
+    $scope.newExpression.result = eval($scope.newExpression.expression);
+    $scope.expressionResult = "Last result is : " + $scope.newExpression.result;
+    $scope.expressions.push($scope.newExpression.expression + " = " + $scope.newExpression.result);
+    return;
+  }
   $scope.computeProcess = function(){
-    console.log($scope.newCompute.operation)
     if ($scope.newCompute.operation == undefined) {
       $scope.lastResult = "fill the operation select please";
       return;
