@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Encoder</title>
+    <link rel="stylesheet" href="css/calculator.css">
+  </head>
+  <body ng-app='MyEncoder'>
+    <div class="main-encoder" ng-controller='EncodeController'>
+      <fieldset>
+        <form name="myEncode" ng-submit="encodeUrl()" novalidate>
+          <input type="text" ng-model="url.text" placeholder="My expression"/>
+          <input type="submit" value="Encode"/>
+        </form>
+        <p>{{resultEncode}}</p>
+      </fieldset>
+      <br/>
+      <fieldset>
+        <form name="myEncode" ng-submit="decodeUrl()" novalidate>
+          <input type="text" ng-model="url.text" placeholder="My expression"/>
+          <input type="submit" value="Decode"/>
+        </form>
+        <p>{{resultDecode}}</p>
+      </fieldset>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/controller/EncodeController.js"></script>
+    </div>
+  </body>
+</html>
